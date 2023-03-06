@@ -7,8 +7,8 @@ import { Container } from '@mui/material'
 import Table from '../../components/Table'
 import makeData from './data/makeData'
 
-export default function index() {
-  const {columns, data} = makeData()
+export default function index({jsonData}) {
+  const {columns, data} = makeData(jsonData)
   return (
     <Container>
       <Table columns={columns} data={data} />

@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from "react";
-import jsonData from "./dataset_small.json";
 import { MultiSelect } from "react-multi-select-component";
 
 
@@ -32,7 +31,7 @@ function MulitSelectColumnFilter({
   );
 }
 
-export default function makeData() {
+export default function makeData(jsonData) {
   const columns = useMemo(() => {
     const cols = [];
     Object.keys(jsonData[0]).forEach((k) => {
