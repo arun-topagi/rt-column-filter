@@ -1,0 +1,28 @@
+{
+  "name": "mult-select-filtration",
+  "private": true,
+  "description": "multi select filtration",
+  "keywords": [
+    "nextjs",
+    "mui",
+    "material-ui"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.1.0",
+    "@mui/styles": "^5.1.0",
+    "csvtojson": "^2.0.10",
+    "next": "12.0.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-multi-select-component": "^4.3.4",
+    "react-table": "^7.8.0",
+    "underscore": "^1.13.6"
+  }
+}
