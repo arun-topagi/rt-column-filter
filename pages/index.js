@@ -2,7 +2,7 @@ import Head from "next/head";
 import csvToJson from 'csvtojson';
 
 // const
-const csvFilePath = 'public/dataset_small.csv';
+const csvFilePath = 'public/data/dataset_small.csv';
 
 // components
 import Home from '../src/container/Home'
