@@ -2,9 +2,8 @@ import Head from "next/head";
 import csvToJson from 'csvtojson';
 
 // const
-const csvFilePath = 'public/data/dataset_small.csv';
+const csvFilePath = 'public/dataset_small.csv';
 
-console.log(csvFilePath, 'csvFilePath')
 // components
 import Home from '../src/container/Home'
 export default function index({ data }) {
