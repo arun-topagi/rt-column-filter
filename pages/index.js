@@ -1,12 +1,15 @@
 import Head from "next/head";
-import csvToJson from 'csvtojson';
+import useSWR from "swr";
 
-// const
-const csvFilePath = 'public/data/dataset_small.csv';
+// mui
+import { Container } from "@mui/material";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 // components
-import Home from '../src/container/Home'
-export default function index({ data }) {
+import Home from "../src/container/Home";
+export default function index() {
+  const { data, error, isLoading } = useSWR("/api/staticdata", fetcher);
   return (
     <>
       <Head>
@@ -14,16 +17,17 @@ export default function index({ data }) {
         <meta name="description" content="Column Filtration Assignment" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="main">
-        <Home jsonData={data}/>
-      </main>
+      <Container>
+        {(() => {
+          if (error) {
+            return <div>failed to load</div>;
+          } else if (isLoading) {
+            return <div>loading...</div>;
+          } else {
+            return <Home jsonData={data} />;
+          }
+        })()}
+      </Container>
     </>
   );
-}
-
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const json = await csvToJson().fromFile(csvFilePath);
-  // Pass data to the page via props
-  return { props: { data: json } }
 }
